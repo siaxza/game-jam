@@ -1,14 +1,32 @@
 import { CardProps } from "../types/CardProps";
-import { IconUmbrella } from "@tabler/icons-react";
+import { IconPlayerPlay, IconChartArrowsVertical } from "@tabler/icons-react";
 
 export const starterCards: CardProps[] = [
   {
-    title: "Contribute",
-    description: "Contribute to your pension",
-    icon: <IconUmbrella size={100} />,
+    title: "Pension Boost",
+    description: "Add a one-off boost to your pension",
+    icon: <IconChartArrowsVertical size={100} />,
     effect: "pension",
-    effectValue: 100,
+    effectValue: 5000,
     category: "starter",
-    cost: 100,
+    cost: 0,
+  },
+  {
+    title: "Salary Boost",
+    description: "Add a monthly increase to your salary",
+    icon: <IconPlayerPlay size={100} />,
+    effect: "cash",
+    effectValue: 300,
+    category: "starter",
+    cost: 0,
+  },
+  {
+    title: "Happiness Boost",
+    description: "Add a one-off boost to your happiness",
+    icon: <IconChartArrowsVertical size={100} />,
+    effect: "happiness",
+    effectValue: 300,
+    category: "starter",
+    cost: 0,
   },
 ];
