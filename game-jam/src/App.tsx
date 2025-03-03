@@ -1,14 +1,20 @@
 import "@mantine/core/styles.css";
-import { MantineProvider } from "@mantine/core";
-import { Card } from "./components/Card/Card";
+import { Container, MantineProvider, Stack } from "@mantine/core";
 import { VariablesDisplay } from "./components/VariablesDisplay/VariablesDisplay";
+import { CardSelect } from "./components/CardSelect/CardSelect";
+import { Card } from "./components/Card/Card";
 import { pensionCards } from "./constants/pensionCards";
 import { happinessCards } from "./constants/happinessCards";
 
 function App() {
   return (
     <MantineProvider>
-      <VariablesDisplay />
+      <Container mt="sm">
+        <Stack>
+          <VariablesDisplay />
+          <CardSelect />
+        </Stack>
+      </Container>
       <h2>Pension Cards</h2>
       {pensionCards.map((card) => (
         <Card
