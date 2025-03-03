@@ -1,7 +1,14 @@
 import { CardProps } from "../types/CardProps";
-import { IconMoodSmile, IconClipboardData, IconBuildingBank, IconChefHat, IconDeviceTv, IconConfetti, IconCar, IconBeach } from "@tabler/icons-react";
+import {
+  IconClipboardData,
+  IconBuildingBank,
+  IconChefHat,
+  IconDeviceTv,
+  IconConfetti,
+  IconCar,
+  IconBeach,
+} from "@tabler/icons-react";
 
-// https://tablericons.com
 export const choiceCards: CardProps[] = [
   {
     title: "Go on holiday",
@@ -14,7 +21,8 @@ export const choiceCards: CardProps[] = [
   },
   {
     title: "Employer training",
-    description: "Your employer offers you training, this will increase your skills and make you more valuable increasing your salary",
+    description:
+      "Your employer offers you training, this will increase your skills and make you more valuable increasing your salary",
     icon: <IconClipboardData size={100} />,
     effect: "cash",
     effectValue: 100,
@@ -23,7 +31,8 @@ export const choiceCards: CardProps[] = [
   },
   {
     title: "Employer training",
-    description: "Your employer offers you training, this will increase your skills and make you more valuable increasing your salary",
+    description:
+      "Your employer offers you training, this will increase your skills and make you more valuable increasing your salary",
     icon: <IconClipboardData size={100} />,
     effect: "cash",
     effectValue: 100,
@@ -32,7 +41,8 @@ export const choiceCards: CardProps[] = [
   },
   {
     title: "Contribute to pension",
-    description: "You decide to contribute to your pension, this will increase your pension pot",
+    description:
+      "You decide to contribute to your pension, this will increase your pension pot",
     icon: <IconBuildingBank size={100} />,
     effect: "cash",
     effectValue: -100,
@@ -41,7 +51,8 @@ export const choiceCards: CardProps[] = [
   },
   {
     title: "Contribute to pension",
-    description: "You decide to contribute to your pension, this will increase your pension pot",
+    description:
+      "You decide to contribute to your pension, this will increase your pension pot",
     icon: <IconBuildingBank size={100} />,
     effect: "cash",
     effectValue: -100,
@@ -50,7 +61,8 @@ export const choiceCards: CardProps[] = [
   },
   {
     title: "Contribute to pension",
-    description: "You decide to contribute to your pension, this will increase your pension pot",
+    description:
+      "You decide to contribute to your pension, this will increase your pension pot",
     icon: <IconBuildingBank size={100} />,
     effect: "cash",
     effectValue: -100,
@@ -59,7 +71,8 @@ export const choiceCards: CardProps[] = [
   },
   {
     title: "Contribute to pension",
-    description: "You decide to contribute to your pension, this will increase your pension pot",
+    description:
+      "You decide to contribute to your pension, this will increase your pension pot",
     icon: <IconBuildingBank size={100} />,
     effect: "cash",
     effectValue: -100,
@@ -68,7 +81,8 @@ export const choiceCards: CardProps[] = [
   },
   {
     title: "Contribute to pension",
-    description: "You decide to contribute to your pension, this will increase your pension pot",
+    description:
+      "You decide to contribute to your pension, this will increase your pension pot",
     icon: <IconBuildingBank size={100} />,
     effect: "cash",
     effectValue: -100,
@@ -110,5 +124,5 @@ export const choiceCards: CardProps[] = [
     effectValue: 100,
     category: "choice",
     cost: 100,
-  }
+  },
 ];

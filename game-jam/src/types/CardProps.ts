@@ -3,7 +3,7 @@ export type CardProps = {
   description: string;
   icon: React.ReactNode;
   effect: "pension" | "happiness" | "cash";
-  category: "starter" | "choice" | "event";
+  category: "starter" | "choice" | "event" | "payment";
   effectValue: number;
   cost?: number;
 };
