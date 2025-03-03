@@ -1,12 +1,12 @@
 import { Group, Paper, Text } from "@mantine/core";
 import { IconPigMoney } from "@tabler/icons-react";
 
-type CashDisplayProps = {
+type ValueDisplayProps = {
   text: string;
-  value: number;
+  value: string;
 };
 
-export const CashDisplay = ({ text, value }: CashDisplayProps) => {
+export const ValueDisplay = ({ text, value }: ValueDisplayProps) => {
   return (
     <Paper withBorder p="md" radius="md">
       <Group justify="space-between">
@@ -17,7 +17,7 @@ export const CashDisplay = ({ text, value }: CashDisplayProps) => {
       </Group>
 
       <Group align="flex-end" gap="xs">
-        <Text>£{value}</Text>
+        <Text>{value}</Text>
       </Group>
     </Paper>
   );

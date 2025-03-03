@@ -1,6 +1,6 @@
 import { Paper, SimpleGrid } from "@mantine/core";
 import { BarDisplay } from "../BarDisplay/BarDisplay";
-import { CashDisplay } from "../CashDisplay/CashDisplay";
+import { ValueDisplay } from "../ValueDisplay/ValueDisplay";
 import { IconMoodSmile, IconUmbrella } from "@tabler/icons-react";
 import { useAppSelector } from "../../state/hooks";
 
@@ -9,7 +9,7 @@ export const VariablesDisplay = () => {
 
   return (
     <SimpleGrid cols={4}>
-      <CashDisplay text="Cash" value={gameState.cash} />
+      <ValueDisplay text="Cash" value={`${gameState.cash}`} />
       <BarDisplay
         text="Happiness"
         value={gameState.happiness}
@@ -20,6 +20,8 @@ export const VariablesDisplay = () => {
         value={gameState.pensionValue}
         icon={<IconUmbrella size={50} />}
       />
+      <ValueDisplay text="Round" value={`${gameState.round}`} />
+
       <SimpleGrid cols={2}>
         <Paper withBorder>Round {gameState.round}/10</Paper>
         <Paper withBorder>Year X</Paper>
