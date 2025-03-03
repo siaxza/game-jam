@@ -16,7 +16,7 @@ export const VariablesDisplay = () => {
     <SimpleGrid cols={4}>
       <ValueDisplay
         text="Cash"
-        value={`${gameState.cash}`}
+        value={`£${gameState.cash}`}
         icon={<IconPigMoney size={50} stroke={1.5} />}
       />
       <BarDisplay

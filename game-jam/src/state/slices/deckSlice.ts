@@ -23,11 +23,7 @@ export const deckSlice = createSlice({
   initialState,
   reducers: {
     drawNextCards: (state, { payload }: PayloadAction<CurrentStage>) => {
-      // Todo: handle the next move depending on current stage
       if (payload === "event") {
-        // Todo: remove three random cards from the choice card deck
-        // Todo: add the three cards to the card in hand
-
         // Remove three random cards from the choice card deck
         const drawnCards = [];
 

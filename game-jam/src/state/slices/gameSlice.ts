@@ -25,33 +25,45 @@ export const gameSlice = createSlice({
   initialState,
   reducers: {
     applyEffect: (state, { payload }: PayloadAction<CardProps>) => {
-      // if theres cost, reduce the cash
       if (payload.cost) {
         state.cash -= payload.cost;
       }
 
-      // if it's a happiness effect apply it
-      if (payload.effect === "happiness") {
-        state.happiness += payload.effectValue;
+      switch (payload.effect) {
+        case "happiness":
+          state.happiness += payload.effectValue;
+          break;
+        case "pension":
+          state.pensionValue += payload.effectValue;
+          break;
+        case "salary":
+          state.salary += payload.effectValue;
+          break;
+        case "cash":
+        default:
+          state.cash += payload.effectValue;
+          break;
       }
 
-      // if its a pension value effect apply it
-      if (payload.effect === "pension") {
-        state.pensionValue += payload.effectValue;
-      }
-
-      if (state.currentStage === "starter") {
-        state.currentStage = "event";
-      } else if (state.currentStage === "choice") {
-        if (state.round === 10) {
-          state.currentStage = "complete";
-        } else {
-          state.currentStage = "payment";
-        }
-      } else if (state.currentStage === "payment") {
-        state.currentStage = "event";
-      } else if (state.currentStage === "event") {
-        state.currentStage = "choice";
+      switch (state.currentStage) {
+        case "starter":
+          state.currentStage = "event";
+          break;
+        case "choice":
+          if (state.round === 10) {
+            state.currentStage = "complete";
+          } else {
+            state.round += 1;
+            state.currentStage = "payment";
+          }
+          break;
+        case "payment":
+          state.currentStage = "event";
+          break;
+        case "event":
+        default:
+          state.currentStage = "choice";
+          break;
       }
     },
   },

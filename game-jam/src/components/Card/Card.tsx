@@ -1,6 +1,6 @@
 import classes from "././Card.module.css";
 import { CardProps } from "../../types/CardProps";
-import { Paper, useMantineTheme } from "@mantine/core";
+import { Group, Paper, useMantineTheme } from "@mantine/core";
 import { IconCircleArrowUp } from "@tabler/icons-react";
 import { EffectDisplay } from "../EffectDisplay/EffectDisplay";
 
@@ -17,9 +17,11 @@ export const Card = ({
 
   return (
     <Paper withBorder radius="md" className={classes.cardContainer}>
-      <div className={classes.titleContainer}>
-        <span>{title}</span>
-        <EffectDisplay effect={effect} effectValue={effectValue} />
+      <div>
+        <Group justify="end">
+          <EffectDisplay effect={effect} effectValue={effectValue} />
+        </Group>
+        <h2 className={classes.title}>{title}</h2>
       </div>
       <div className={classes.iconContainer}>
         {icon}

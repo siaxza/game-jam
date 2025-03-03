@@ -1,1 +1,1 @@
-export type Effect = "pension" | "happiness" | "cash";
+export type Effect = "pension" | "happiness" | "cash" | "salary";
