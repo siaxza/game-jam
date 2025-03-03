@@ -1,0 +1,25 @@
+.cardContainer {
+  width: 250px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1rem;
+
+  * + div {
+    margin-top: 1.5em;
+  }
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: center;
+}
