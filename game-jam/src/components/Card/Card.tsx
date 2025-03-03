@@ -10,7 +10,7 @@ export const Card = ({
   cost,
 }: CardProps) => {
   return (
-    <div className={classes.cardContainerShine}>
+    <Paper className={classes.cardContainerShine}>
       <div className={classes.titleContainer}>
         <span>{title}</span>
         <span>?</span>
