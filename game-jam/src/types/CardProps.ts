@@ -4,5 +4,6 @@ export type CardProps = {
   icon: React.ReactNode;
   effect: "pension" | "happiness" | "cash";
   category: "starter" | "choice" | "event";
-  cost: number;
+  effectValue: number;
+  cost?: number;
 };
