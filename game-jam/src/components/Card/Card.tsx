@@ -9,7 +9,7 @@ export const Card = ({
   cost,
 }: CardProps) => {
   return (
-    <div className={classes.cardContainer}>
+    <div className={classes.cardContainerShine}>
       <div className={classes.titleContainer}>
         <span>{title}</span>
         <span>?</span>
@@ -18,7 +18,7 @@ export const Card = ({
       <div>{description}</div>
       <div className={classes.footerContainer}>
         <span className={classes.footerValue}>{category}</span>
-        <span className={classes.footerValue}>{cost}</span>
+        <span className={classes.footerValue}>{cost+`💸`}</span>
       </div>
     </div>
   );
