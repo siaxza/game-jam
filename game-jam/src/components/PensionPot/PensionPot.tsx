@@ -5,6 +5,7 @@ import type { PensionPot } from '../../types/PensionPot';
 
 export function PensionPot({ potData }: { potData: PensionPot }) {
   const DiffIcon = potData.diff > 0 ? IconArrowUpRight : IconArrowDownRight;
+  const startingPoint = potData.diff != 0 && potData.value != 0;
 
   return (
     <Paper withBorder p="md" radius="md" key="Pension Pot">
@@ -14,10 +15,10 @@ export function PensionPot({ potData }: { potData: PensionPot }) {
             Pension Pot
           </Text>
           <Text fw={700} fz="xl">
-            {potData.value}
+            £{potData.value}
           </Text>
         </div>
-        <ThemeIcon
+        {startingPoint && <ThemeIcon
           color="gray"
           variant="light"
           style={{
@@ -27,14 +28,14 @@ export function PensionPot({ potData }: { potData: PensionPot }) {
           radius="md"
         >
           <DiffIcon size={28} stroke={1.5} />
-        </ThemeIcon>
+        </ThemeIcon>}
       </Group>
-      <Text c="dimmed" fz="sm" mt="md">
+      {startingPoint && <Text c="dimmed" fz="sm" mt="md">
         <Text component="span" c={potData.diff > 0 ? 'teal' : 'red'} fw={700}>
           {potData.diff}%
         </Text>{' '}
         {potData.diff > 0 ? 'increase' : 'decrease'} compared to previous round
-      </Text>
+      </Text>}
     </Paper>
   );
 }

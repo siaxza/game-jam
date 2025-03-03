@@ -3,6 +3,7 @@ import { CardProps } from "../../types/CardProps";
 import { CurrentStage } from "../../types/CurrentStage";
 import { PensionPot } from "../../types/PensionPot";
 import { starterPensionPot } from "../../constants/starterPensionPot";
+import { PensionPotCalculator } from "../../components/PensionPot/Calculator";
 
 export interface GameState {
   currentStage: CurrentStage;
@@ -40,7 +41,7 @@ export const gameSlice = createSlice({
       // if its a pension value effect apply it
       if (payload.effect === "pension") {
         // TODO: apply the pension effect
-        // state.pension += payload.effectValue;
+        state.pension = PensionPotCalculator(state.pension, payload.effectValue);
       }
 
       if (state.currentStage === "starter") {

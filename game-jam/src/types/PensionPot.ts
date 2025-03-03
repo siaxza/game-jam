@@ -1,4 +1,4 @@
 export type PensionPot = {
-  value: string;
+  value: number;
   diff: number;
 };
