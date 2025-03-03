@@ -5,15 +5,12 @@ import {
   IconFlag,
   IconMoodSmile,
   IconPigMoney,
-  IconUmbrella,
 } from "@tabler/icons-react";
 import { useAppSelector } from "../../state/hooks";
 import { PensionPot } from "../PensionPot/PensionPot";
 
 export const VariablesDisplay = () => {
   const gameState = useAppSelector((state) => state.game);
-
-  const potData = { title: 'Pension Pot', value: '£13,456', diff: 34 };
 
   return (
     <SimpleGrid cols={4}>
@@ -27,7 +24,7 @@ export const VariablesDisplay = () => {
         value={gameState.happiness}
         icon={<IconMoodSmile size={50} />}
       />
-      <PensionPot potData={potData}/>
+      <PensionPot potData={gameState.pension}/>
       <ValueDisplay
         text="Round"
         value={`${gameState.round}/10`}

@@ -16,7 +16,7 @@ export const BarDisplay = ({ text, value, icon }: CashDisplayProps) => {
         {icon}
       </Group>
 
-      <Progress.Root mt="md" size="lg" radius="xl">
+      <Progress.Root mt="md" size="xlg" radius="xl">
         <Progress.Section value={value}>
           <Progress.Label>{value}%</Progress.Label>
         </Progress.Section>

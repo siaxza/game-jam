@@ -1,22 +1,17 @@
 import { IconArrowDownRight, IconArrowUpRight } from '@tabler/icons-react';
 import { Group, Paper, Text, ThemeIcon } from '@mantine/core';
 import classes from './PensionPot.module.css';
+import type { PensionPot } from '../../types/PensionPot';
 
-interface PotData {
-  title: string;
-  value: string;
-  diff: number;
-}
-
-export function PensionPot({ potData }: { potData: PotData }) {
+export function PensionPot({ potData }: { potData: PensionPot }) {
   const DiffIcon = potData.diff > 0 ? IconArrowUpRight : IconArrowDownRight;
 
   return (
-    <Paper withBorder p="md" radius="md" key={potData.title}>
+    <Paper withBorder p="md" radius="md" key="Pension Pot">
       <Group justify="apart">
         <div>
           <Text c="dimmed" tt="uppercase" fw={700} fz="xs" className={classes.label}>
-            {potData.title}
+            Pension Pot
           </Text>
           <Text fw={700} fz="xl">
             {potData.value}
