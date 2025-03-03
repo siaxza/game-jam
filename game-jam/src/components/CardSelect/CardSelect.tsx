@@ -1,13 +1,14 @@
-import { pensionCards } from "../../constants/pensionCards";
-import { happinessCards } from "../../constants/happinessCards";
 import { Card } from "../Card/Card";
-import { Group, UnstyledButton } from "@mantine/core";
+import { SimpleGrid, UnstyledButton } from "@mantine/core";
+import { choiceCards } from "../../constants/choiceCards";
+import { get3RandomCards } from "../../helpers/cardHelpers";
 
 export const CardSelect = () => {
+  const threeChoiceCards = get3RandomCards(choiceCards);
   return (
-    <Group style={{ alignItems: "stretch" }}>
-      {pensionCards.map((card) => (
-        <UnstyledButton>
+    <SimpleGrid cols={3} style={{ alignItems: "stretch" }}>
+      {threeChoiceCards.map((card) => (
+        <UnstyledButton key={card.title}>
           <Card
             title={card.title}
             description={card.description}
@@ -15,21 +16,10 @@ export const CardSelect = () => {
             category={card.category}
             effect={card.effect}
             cost={card.cost}
+            effectValue={card.effectValue}
           />
         </UnstyledButton>
       ))}
-      {happinessCards.map((card) => (
-        <UnstyledButton>
-          <Card
-            title={card.title}
-            description={card.description}
-            icon={card.icon}
-            category={card.category}
-            effect={card.effect}
-            cost={card.cost}
-          />
-        </UnstyledButton>
-      ))}
-    </Group>
+    </SimpleGrid>
   );
 };

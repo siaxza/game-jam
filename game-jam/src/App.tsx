@@ -16,7 +16,7 @@ function App() {
           <CardSelect />
         </Stack>
       </Container>
-      <VariablesDisplay />
+
       <h2>Starter Cards</h2>
       {starterCards.map((card) => (
         <Card
