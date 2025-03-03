@@ -2,6 +2,7 @@ import classes from "././Card.module.css";
 import { CardProps } from "../../types/CardProps";
 import { Paper, useMantineTheme } from "@mantine/core";
 import { IconCircleArrowUp } from "@tabler/icons-react";
+import { EffectDisplay } from "../EffectDisplay/EffectDisplay";
 
 export const Card = ({
   title,
@@ -9,6 +10,8 @@ export const Card = ({
   icon,
   category,
   cost,
+  effect,
+  effectValue,
 }: CardProps) => {
   const theme = useMantineTheme();
 
@@ -16,7 +19,7 @@ export const Card = ({
     <Paper withBorder radius="md" className={classes.cardContainer}>
       <div className={classes.titleContainer}>
         <span>{title}</span>
-        <span>?</span>
+        <EffectDisplay effect={effect} effectValue={effectValue} />
       </div>
       <div className={classes.iconContainer}>
         {icon}
