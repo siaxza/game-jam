@@ -47,6 +47,10 @@
   }
 }
 
+.footerCategory {
+  text-transform: capitalize;
+}
+
 .cardContainerShine {
   user-select: none;
   max-width: 300px;

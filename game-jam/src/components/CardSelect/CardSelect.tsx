@@ -58,7 +58,7 @@ export const CardSelect = () => {
           </Grid.Col>
         </Grid>
       ) : (
-        <SimpleGrid cols={3} style={{ alignItems: "stretch" }}>
+        <SimpleGrid cols={{ base: 1, sm: 3 }} style={{ alignItems: "stretch" }}>
           {cardsInHand.map((card) => (
             <UnstyledButton
               key={card.title}

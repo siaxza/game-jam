@@ -1,6 +1,6 @@
 import classes from "././Card.module.css";
 import { CardProps } from "../../types/CardProps";
-import { Group, Paper, useMantineTheme } from "@mantine/core";
+import { Group, Paper, Pill, useMantineTheme } from "@mantine/core";
 import { IconCircleArrowUp } from "@tabler/icons-react";
 import { EffectDisplay } from "../EffectDisplay/EffectDisplay";
 
@@ -35,8 +35,10 @@ export const Card = ({
       </div>
       <div>{description}</div>
       <div className={classes.footerContainer}>
-        <span className={classes.footerValue}>{category}</span>
-        <span className={classes.footerValue}>{cost ? `${cost}💸` : ""}</span>
+        <Pill>
+          <span className={classes.footerCategory}>{category}</span>
+        </Pill>
+        <span>{cost ? `£${cost}` : ""}</span>
       </div>
     </Paper>
   );

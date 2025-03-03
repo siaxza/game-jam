@@ -10,9 +10,7 @@ export const BarDisplay = ({ text, value, icon }: CashDisplayProps) => {
   return (
     <Paper withBorder p="md" radius="md">
       <Group justify="space-between">
-        <Text size="xs" c="dimmed">
-          {text}
-        </Text>
+        <Text>{text}</Text>
         {icon}
       </Group>
 
