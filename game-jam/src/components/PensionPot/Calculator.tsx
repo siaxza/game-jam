@@ -7,7 +7,6 @@ export const PensionPotCalculator = (pensionPot: PensionPot, value: number) => {
 
     return {
         value: potValue,
-        diff: ((potValue - pensionPot.value) / pensionPot.value) * 100
+        diff: (((potValue - pensionPot.value) / pensionPot.value) * 100).toFixed(2),
     };
-    
 };
