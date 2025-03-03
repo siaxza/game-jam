@@ -5,9 +5,9 @@ import {
   IconFlag,
   IconMoodSmile,
   IconPigMoney,
-  IconUmbrella,
 } from "@tabler/icons-react";
 import { useAppSelector } from "../../state/hooks";
+import { PensionPot } from "../PensionPot/PensionPot";
 
 export const VariablesDisplay = () => {
   const gameState = useAppSelector((state) => state.game);
@@ -24,11 +24,7 @@ export const VariablesDisplay = () => {
         value={gameState.happiness}
         icon={<IconMoodSmile size={50} />}
       />
-      <BarDisplay
-        text="Pension pot"
-        value={gameState.pensionValue}
-        icon={<IconUmbrella size={50} />}
-      />
+      <PensionPot potData={gameState.pension}/>
       <ValueDisplay
         text="Round"
         value={`${gameState.round}/10`}

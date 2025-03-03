@@ -1,11 +1,14 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { CardProps } from "../../types/CardProps";
 import { CurrentStage } from "../../types/CurrentStage";
+import { PensionPot } from "../../types/PensionPot";
+import { starterPensionPot } from "../../constants/starterPensionPot";
+import { PensionPotCalculator } from "../../components/PensionPot/Calculator";
 
 export interface GameState {
   currentStage: CurrentStage;
   happiness: number;
-  pensionValue: number;
+  pension: PensionPot;
   cash: number;
   round: number;
   salary: number;
@@ -14,7 +17,7 @@ export interface GameState {
 const initialState: GameState = {
   currentStage: "starter",
   happiness: 50,
-  pensionValue: 0,
+  pension: starterPensionPot,
   cash: 500,
   round: 1,
   salary: 500,
@@ -34,7 +37,10 @@ export const gameSlice = createSlice({
           state.happiness += payload.effectValue;
           break;
         case "pension":
-          state.pensionValue += payload.effectValue;
+          state.pension = PensionPotCalculator(
+            state.pension,
+            payload.effectValue
+          );
           break;
         case "salary":
           state.salary += payload.effectValue;
