@@ -1,5 +1,6 @@
 import classes from "././Card.module.css";
 import { CardProps } from "../../types/CardProps";
+import { Paper } from "@mantine/core";
 
 export const Card = ({
   title,
@@ -20,6 +21,6 @@ export const Card = ({
         <span className={classes.footerValue}>{category}</span>
         <span className={classes.footerValue}>{cost+`💸`}</span>
       </div>
-    </div>
+    </Paper>
   );
 };
