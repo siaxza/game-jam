@@ -6,7 +6,8 @@ export const happinessCards: CardProps[] = [
     title: "Go on holiday",
     description: "Go on holiday to somewhere nice",
     icon: <IconMoodSmile size={100} />,
-    category: "happiness",
+    effect: "happiness",
+    category: "choice",
     cost: 100,
   },
 ];
