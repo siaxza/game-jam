@@ -31,7 +31,7 @@ export const Card = ({
       <div>{description}</div>
       <div className={classes.footerContainer}>
         <span className={classes.footerValue}>{category}</span>
-        <span className={classes.footerValue}>{cost}</span>
+        <span className={classes.footerValue}>{cost + `💸`}</span>
       </div>
     </Paper>
   );
