@@ -21,7 +21,7 @@ export const starterCards: CardProps[] = [
     cost: 0,
   },
   {
-    title: "Annual Leave Boost",
+    title: "Happiness Boost",
     description: "Add a one-off boost to your happiness",
     icon: <IconChartArrowsVertical size={100} />,
     effect: "happiness",
