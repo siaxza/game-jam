@@ -9,7 +9,7 @@ describe("applyEffect reducer", () => {
     initialState = {
       cash: 100,
       happiness: 50,
-      pensionValue: 200,
+      pension: { value: 200, diff: 0 },
       salary: 1000,
       currentStage: "starter",
       round: 1,
@@ -65,7 +65,7 @@ describe("applyEffect reducer", () => {
 
     const newState = reducer(initialState, applyEffect(payload));
 
-    expect(newState.pensionValue).toBe(250); // 200 + 50 = 250
+    expect(newState.pension.value).toBe(250); // 200 + 50 = 250
   });
 
   // Test for pension effect (negative value)
@@ -78,7 +78,7 @@ describe("applyEffect reducer", () => {
 
     const newState = reducer(initialState, applyEffect(payload));
 
-    expect(newState.pensionValue).toBe(150); // 200 - 50 = 150
+    expect(newState.pension.value).toBe(150); // 200 - 50 = 150
   });
 
   // Test for cash effect (positive value)
@@ -164,7 +164,7 @@ describe("applyEffect reducer", () => {
   // Test for "choice" stage with round not 10, current stage should change to "payment"
   it('should change the current stage to "payment" if the current stage is "choice" and round is not 10', () => {
     initialState.currentStage = "choice";
-    initialState.round = 9;
+    initialState.round = 1;
     const payload: any = {
       cost: 0,
       effect: "cash",
