@@ -14,13 +14,12 @@ function App() {
       <Container mt="sm">
         {currentStage === "lose" ? <LoseSummary /> : 
         currentStage === "complete" ? <CompletionSummary /> :
-      
-        //how to add if condition here?
-          <Stack>
-            <VariablesDisplay />
-            <CardSelect />
-          </Stack>
+        <Stack>
+          <VariablesDisplay />
+          <CardSelect />
+        </Stack>
         }
+
       </Container>
     </MantineProvider>
   );

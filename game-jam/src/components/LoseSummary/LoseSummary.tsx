@@ -1,12 +1,19 @@
-import { SimpleGrid, Text } from "@mantine/core";
+import { Button, SimpleGrid, Text } from "@mantine/core";
 import { IconMoodHappy, IconUmbrella } from "@tabler/icons-react";
 import { SummaryLoseCard } from "../SummaryCard/SummaryLoseCard";
 import { useAppDispatch, useAppSelector } from "../../state/hooks";
+import { resetGame } from "../../state/slices/gameSlice";
+import { resetDeck } from "../../state/slices/deckSlice";
+import { IconRefresh } from "@tabler/icons-react";
 
 export const LoseSummary = () => {
   const dispatch = useAppDispatch();
   const happiness = useAppSelector((state) => state.game.happiness);
   const cash = useAppSelector((state) => state.game.cash);
+    const onRestartClick = () => {
+        dispatch(resetDeck());
+        dispatch(resetGame());
+      };
 
   return (
     <SimpleGrid cols={{ md: 1, sm: 1 }}>
@@ -36,6 +43,9 @@ export const LoseSummary = () => {
       >
         <Text mt="md">You lose because your happiness rating drop below 25%. While basic needs are met you have little or no enjoyment or contentment.</Text>
       </SummaryLoseCard>}
+      <Button size="lg" rightSection={<IconRefresh />} onClick={onRestartClick}>
+        Restart game
+      </Button>
     </SimpleGrid>
   );
 };
