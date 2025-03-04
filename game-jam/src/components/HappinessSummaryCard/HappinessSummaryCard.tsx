@@ -1,4 +1,4 @@
-import { IconUmbrella } from "@tabler/icons-react";
+import { IconUmbrella, IconMoodHappy } from "@tabler/icons-react";
 import { Text } from "@mantine/core";
 import { SummaryCard } from "../SummaryCard/SummaryCard";
 
@@ -16,8 +16,8 @@ export const HappinessnSummaryCard = ({
   
   return (
     <SummaryCard
-      icon={<IconUmbrella size={32} stroke={1.5} />}
-      summaryType="Pension"
+      icon={<IconMoodHappy size={32} stroke={1.5} />}
+      summaryType="Happiness"
       rating={rating}
       >
       <Text mt="md">{summaryText}</Text>
