@@ -100,7 +100,7 @@ export const choiceCards: CardProps[] = [
       "You decide to contribute to your pension, this will increase your pension pot",
     icon: <IconBuildingBank size={100} />,
     effect: "pension",
-    effectValue: 100,
+    effectValue: 500,
     category: "choice",
     cost: 500,
   },
