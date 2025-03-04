@@ -1,6 +1,8 @@
 import { PensionPot } from "../types/PensionPot";
 
 export const starterPensionPot: PensionPot = {
-  value: 0,
-  diff: 0
+  currentValue: 1000,
+  diff: 0,
+  percentage: 7,
+  previousValue: 0,
 };

@@ -1,5 +1,5 @@
 import { CardProps } from "../types/CardProps";
-import { IconBabyCarriage, IconBriefcase2, IconCircleKey, IconCoins, IconHeartBroken, IconHome, IconTrendingDown, IconTrendingUp } from "@tabler/icons-react";
+import { IconBabyCarriage, IconBriefcase2, IconChartLine, IconCircleKey, IconCoins, IconHeartBroken, IconHome, IconTrendingDown, IconTrendingUp } from "@tabler/icons-react";
 
 export const eventCards: CardProps[] = [
   {
@@ -12,7 +12,7 @@ export const eventCards: CardProps[] = [
   },
   {
     title: "Salary Raise",
-    description: "Your employer has contributed to your pension",
+    description: "Your employer has given you a raise, based on your recent performance",
     icon: <IconCoins size={100} />,
     effect: "cash",
     effectValue: 300,
@@ -65,6 +65,30 @@ export const eventCards: CardProps[] = [
     icon: <IconHome size={100} />,
     effect: "cash",
     effectValue: -500,
+    category: "event",
+  },
+  {
+    title: "Pension rate",
+    description: "Your pension rate has changed to 7%",
+    icon: <IconChartLine size={100} />,
+    effect: "pension-rate",
+    effectValue: 7,
+    category: "event",
+  },
+  {
+    title: "Pension rate",
+    description: "Your pension rate has changed to 10%",
+    icon: <IconChartLine size={100} />,
+    effect: "pension-rate",
+    effectValue: 4,
+    category: "event",
+  },
+  {
+    title: "Pension rate",
+    description: "Your pension rate has changed to 3%",
+    icon: <IconChartLine size={100} />,
+    effect: "pension-rate",
+    effectValue: 2,
     category: "event",
   },
 ];
