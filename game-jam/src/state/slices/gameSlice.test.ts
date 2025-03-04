@@ -87,6 +87,20 @@ describe("applyEffect reducer", () => {
       cost: 0,
       effect: "cash",
       effectValue: 100,
+      category: "payment",
+    };
+
+    const newState = reducer(initialState, applyEffect(payload));
+
+    expect(newState.cash).toBe(1100); // 100 + 1000 = 1100
+  });
+
+  // Test for cash effect when the category is salary
+  it("should add cash value if effect is cash and value is positive", () => {
+    const payload: any = {
+      cost: 0,
+      effect: "cash",
+      effectValue: 100,
     };
 
     const newState = reducer(initialState, applyEffect(payload));
