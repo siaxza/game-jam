@@ -94,6 +94,10 @@ export const gameSlice = createSlice({
           state.currentStage = "choice";
           break;
       }
+
+      if(state.cash <0 || state.happiness<25){
+        state.currentStage = "lose";
+      }
     },
     resetGame: () => {
       return initialState;

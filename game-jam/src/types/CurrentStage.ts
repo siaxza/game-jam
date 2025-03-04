@@ -3,4 +3,5 @@ export type CurrentStage =
   | "choice"
   | "event"
   | "payment"
-  | "complete";
+  | "complete"
+  | "lose";

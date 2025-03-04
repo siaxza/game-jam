@@ -4,6 +4,7 @@ import { VariablesDisplay } from "./components/VariablesDisplay/VariablesDisplay
 import { CardSelect } from "./components/CardSelect/CardSelect";
 import { useAppSelector } from "./state/hooks";
 import { CompletionSummary } from "./components/CompletionSummary/CompletionSummary";
+import { LoseSummary } from "./components/LoseSummary/LoseSummary";
 
 function App() {
   const currentStage = useAppSelector((state) => state.game.currentStage);
@@ -11,14 +12,15 @@ function App() {
   return (
     <MantineProvider>
       <Container mt="sm">
-        {currentStage === "complete" ? (
-          <CompletionSummary />
-        ) : (
+        {currentStage === "lose" ? <LoseSummary /> : 
+        currentStage === "complete" ? <CompletionSummary /> :
+      
+        //how to add if condition here?
           <Stack>
             <VariablesDisplay />
             <CardSelect />
           </Stack>
-        )}
+        }
       </Container>
     </MantineProvider>
   );

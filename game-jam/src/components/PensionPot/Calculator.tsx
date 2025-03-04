@@ -24,7 +24,7 @@ export const pensionPotCalculator = (pensionPot: PensionPot, value: number, effe
       const potValue = pensionPot.currentValue * (1 + pensionPot.percentage / 100);
 
       return {
-        currentValue: potValue,
+        currentValue: potValue.toFixed(2),
         diff: Number(
           (((potValue - pensionPot.currentValue) / pensionPot.previousValue) * 100).toFixed(2)
         ),
