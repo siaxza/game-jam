@@ -1,8 +1,9 @@
 import classes from "././Card.module.css";
 import { CardProps } from "../../types/CardProps";
-import { Group, Paper, Pill, useMantineTheme } from "@mantine/core";
+import { Group, Paper, Pill, Text, useMantineTheme } from "@mantine/core";
 import { IconCircleArrowUp } from "@tabler/icons-react";
 import { EffectDisplay } from "../EffectDisplay/EffectDisplay";
+import { useAppSelector } from "../../state/hooks";
 
 export const Card = ({
   title,
@@ -14,6 +15,7 @@ export const Card = ({
   effectValue,
 }: CardProps) => {
   const theme = useMantineTheme();
+  const salary = useAppSelector((state) => state.game.salary);
 
   return (
     <Paper withBorder radius="md" className={classes.cardContainer}>
@@ -38,7 +40,9 @@ export const Card = ({
         <Pill>
           <span className={classes.footerCategory}>{category}</span>
         </Pill>
-        <span>{cost ? `£${cost}` : ""}</span>
+        <Text fw="bold" c={category === "payment" ? "green" : "red"}>
+          {category === "payment" ? `+£${salary}` : cost ? `-£${cost}` : ""}
+        </Text>
       </div>
     </Paper>
   );
