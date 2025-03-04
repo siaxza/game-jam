@@ -86,7 +86,7 @@ whileTap={{ scale: 1.1, rotate: 4, ease: [0, 0.71, 0.2, 1.01]} }>
                 onCardSelect(card);
                 playWoosh();
               }}
-              style={{ height: "100%" }}
+              style={{ height: "100%", width: "100%" }}
             >
               <Card
                 title={card.title}
