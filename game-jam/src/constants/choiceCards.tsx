@@ -10,7 +10,8 @@ import {
   IconDeviceImac,
   IconStereoGlasses,
   IconMicrophone2,
-  IconCaravan
+  IconCaravan,
+  IconRun
 } from "@tabler/icons-react";
 
 export const choiceCards: CardProps[] = [
@@ -225,6 +226,24 @@ export const choiceCards: CardProps[] = [
     cost: 100,
   },
   {
+    title: "Night out",
+    description: "You decide to go on a night out, this will make you happy",
+    icon: <IconRun size={100} />,
+    effect: "happiness",
+    effectValue: 100,
+    category: "choice",
+    cost: 100,
+  },
+  {
+    title: "Night out",
+    description: "You decide to go on a night out, this will make you happy",
+    icon: <IconRun size={100} />,
+    effect: "happiness",
+    effectValue: 100,
+    category: "choice",
+    cost: 100,
+  },
+  {
     title: "Road trip",
     description: "You decide to go on a road trip, this will make you happy",
     icon: <IconCaravan size={100} />,
@@ -232,6 +251,15 @@ export const choiceCards: CardProps[] = [
     effectValue: 100,
     category: "choice",
     cost: 200,
+  },
+  {
+    title: "Concert",
+    description: "You decide to go to a concert, this will make you happy",
+    icon: <IconMicrophone2 size={100} />,
+    effect: "happiness",
+    effectValue: 100,
+    category: "choice",
+    cost: 100,
   },
   {
     title: "Concert",
