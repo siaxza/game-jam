@@ -3,7 +3,7 @@ import {
   IconArrowUpRight,
   IconUmbrella,
 } from "@tabler/icons-react";
-import { Flex, Text, ThemeIcon, Tooltip } from "@mantine/core";
+import { Flex, Text, ThemeIcon } from "@mantine/core";
 import type { PensionPot } from "../../types/PensionPot";
 import { ValueDisplay } from "../ValueDisplay/ValueDisplay";
 import { motion } from 'motion/react';
@@ -15,7 +15,7 @@ export function PensionPot({ potData }: { potData: PensionPot }) {
   return (
     <ValueDisplay
       text="Pension"
-      value={`£${potData.currentValue}`}
+      value={`£${potData.currentValue.toFixed(2)}`}
       icon={<IconUmbrella size={50} stroke={1.5} />}
     >
       {startingPoint && (
@@ -26,7 +26,7 @@ export function PensionPot({ potData }: { potData: PensionPot }) {
               c={potData.diff > 0 ? "teal" : "red"}
               fw={700}
             >
-              {potData.diff}%
+              {potData.diff.toFixed(2)}%
             </Text>{" "}
             {potData.diff > 0 ? "increase" : "decrease"} compared to previous
             round

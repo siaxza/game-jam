@@ -7,7 +7,7 @@ export const eventCards: CardProps[] = [
     description: "Your employer has contributed to your pension",
     icon: <IconBriefcase2 size={100} />,
     effect: "pension",
-    effectValue: 100,
+    effectValue: 1.1,
     category: "event"
   },
   {
@@ -23,7 +23,7 @@ export const eventCards: CardProps[] = [
     description: "The market has crashed, your pension has lost value",
     icon: <IconTrendingDown size={100} />,
     effect: "pension",
-    effectValue: -1000,
+    effectValue: 0.8,
     category: "event"
   },
   {
@@ -31,7 +31,7 @@ export const eventCards: CardProps[] = [
     description: "The market has increased, your pension has gained value",
     icon: <IconTrendingUp size={100} />,
     effect: "pension",
-    effectValue: 1000,
+    effectValue: 1.2,
     category: "event"
   },
   {
@@ -47,7 +47,7 @@ export const eventCards: CardProps[] = [
     description: "You're now divorced, your pension has reduced",
     icon: <IconHeartBroken size={100} />,
     effect: "pension",
-    effectValue: -2000,
+    effectValue: 2,
     category: "event"
   },
   {

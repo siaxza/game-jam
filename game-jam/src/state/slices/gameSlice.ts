@@ -70,14 +70,16 @@ export const gameSlice = createSlice({
           state.pension = pensionPotCalculator(
             state.pension,
             payload.effectValue,
-            payload.effect
+            payload.effect,
+            payload.category
           );
           break;
         case "pension-rate":
           state.pension = pensionPotCalculator(
             state.pension,
             payload.effectValue,
-            payload.effect
+            payload.effect,
+            payload.category
           );
           break;
         case "salary":
