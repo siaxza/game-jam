@@ -39,7 +39,13 @@ function App() {
         ) : (
           <Stack>
             <VariablesDisplay />
-            <Stepper active={currentStageInt(currentStage)} color="yellow">
+            <Stepper
+              active={currentStageInt(currentStage)}
+              color="yellow"
+              classNames={{
+                steps: "custom-stepper",
+              }}
+            >
               <Stepper.Step label="Starter" description="Select starter card">
                 <CardSelect />
               </Stepper.Step>
@@ -51,7 +57,7 @@ function App() {
               </Stepper.Step>
               <Stepper.Step
                 label="Choice"
-                description="GMake a choice this round"
+                description="Make a choice this round"
               >
                 <CardSelect />
               </Stepper.Step>
