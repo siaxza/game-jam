@@ -8,7 +8,8 @@ type CashDisplayProps = {
 
 export const BarDisplay = ({ text, value, icon }: CashDisplayProps) => {
   return (
-    <Paper withBorder p="md" radius="md">
+    <Paper style={{ height: "100%" }}
+    withBorder p="md" radius="md">
       <Group justify="space-between">
         <Text>{text}</Text>
         {icon}

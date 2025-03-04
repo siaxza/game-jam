@@ -16,7 +16,7 @@ export const starterCards: CardProps[] = [
     description: "Add a one-off boost to your pension",
     icon: <IconUmbrella size={100} />,
     effect: "pension",
-    effectValue: 5000,
+    effectValue: 5,
     category: "starter",
     cost: 0,
   },

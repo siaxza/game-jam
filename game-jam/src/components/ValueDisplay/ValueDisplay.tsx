@@ -14,7 +14,8 @@ export const ValueDisplay = ({
   children,
 }: ValueDisplayProps) => {
   return (
-    <Paper withBorder p="md" radius="md">
+    <Paper style={{ height: "100%" }}
+    withBorder p="md" radius="md">
       <Group justify="space-between">
         <Text>{text}</Text>
         {icon}
