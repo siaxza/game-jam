@@ -3,6 +3,7 @@ import { CardProps } from "../../types/CardProps";
 import { Paper, useMantineTheme } from "@mantine/core";
 import { IconCircleArrowUp } from "@tabler/icons-react";
 import { EffectDisplay } from "../EffectDisplay/EffectDisplay";
+import Title from "../Text/Title"
 
 export const Card = ({
   title,
@@ -15,10 +16,18 @@ export const Card = ({
 }: CardProps) => {
   const theme = useMantineTheme();
 
+  const categoryColors = {
+    starter: "var(--start-color)",
+    choice: "var(--choice-color)",
+    payment: "var(--payment-color)",
+    event: "var(--event-color)",
+  };
+
   return (
-    <Paper withBorder radius="md" className={classes.cardContainer}>
+    <Paper withBorder radius="md" className={classes.cardContainerShine} style={{
+      background: `linear-gradient(0deg, rgb(248, 247, 247) 0%, ${categoryColors[category]} 100%)`}}>
       <div className={classes.titleContainer}>
-        <span>{title}</span>
+        <Title title={title}/>
         <EffectDisplay effect={effect} effectValue={effectValue} />
       </div>
       <div className={classes.iconContainer}>
@@ -31,7 +40,7 @@ export const Card = ({
           />
         )}
       </div>
-      <div>{description}</div>
+      <div className={classes.quanticoRegular}>{description}</div>
       <div className={classes.footerContainer}>
         <span className={classes.footerValue}>{category}</span>
         <span className={classes.footerValue}>{cost ? `${cost}💸` : ""}</span>
