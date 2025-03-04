@@ -50,7 +50,7 @@ export const gameSlice = createSlice({
             payload.effect
           );
           break;
-          case "pension-rate":
+        case "pension-rate":
           state.pension = pensionPotCalculator(
             state.pension,
             payload.effectValue,
@@ -81,6 +81,9 @@ export const gameSlice = createSlice({
             state.round += 1;
             state.currentStage = "payment";
             state.pension = pensionPotCalculator(state.pension, 0, "calculate");
+            if (payload.effect !== "happiness") {
+              state.happiness -= 20;
+            }
           }
           break;
         case "payment":
