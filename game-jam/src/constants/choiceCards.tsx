@@ -22,7 +22,7 @@ export const choiceCards: CardProps[] = [
     effect: "happiness",
     effectValue: 100,
     category: "choice",
-    cost: 100,
+    cost: 500,
   },
   {
     title: "Employer training",
@@ -102,7 +102,7 @@ export const choiceCards: CardProps[] = [
     effect: "pension",
     effectValue: 100,
     category: "choice",
-    cost: 100,
+    cost: 500,
   },
   {
     title: "Contribute to pension",
@@ -187,7 +187,7 @@ export const choiceCards: CardProps[] = [
     effect: "happiness",
     effectValue: 100,
     category: "choice",
-    cost: 200,
+    cost: 300,
   },
   {
     title: "Buy a car",
@@ -250,6 +250,15 @@ export const choiceCards: CardProps[] = [
     effect: "happiness",
     effectValue: 100,
     category: "choice",
+    cost: 400,
+  },
+  {
+    title: "Concert",
+    description: "You decide to go to a concert, this will make you happy",
+    icon: <IconMicrophone2 size={100} />,
+    effect: "happiness",
+    effectValue: 100,
+    category: "choice",
     cost: 200,
   },
   {
@@ -259,16 +268,7 @@ export const choiceCards: CardProps[] = [
     effect: "happiness",
     effectValue: 100,
     category: "choice",
-    cost: 100,
-  },
-  {
-    title: "Concert",
-    description: "You decide to go to a concert, this will make you happy",
-    icon: <IconMicrophone2 size={100} />,
-    effect: "happiness",
-    effectValue: 100,
-    category: "choice",
-    cost: 100,
+    cost: 200,
   },
   {
     title: "Watch movie",
