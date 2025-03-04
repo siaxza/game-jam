@@ -19,11 +19,12 @@ export const CardSelect = () => {
     <>
       {currentStage === "payment" ? (
         <Grid>
-          <Grid.Col span={4} offset={4}>
+          <Grid.Col span={{ base: 12, sm: 4 }} offset={{ base: 0, sm: 4 }}>
             <UnstyledButton
               onClick={() => {
                 onCardSelect(cardsInHand[0]);
               }}
+              style={{ width: "100%" }}
             >
               <Card
                 title={cardsInHand[0].title}
@@ -39,11 +40,12 @@ export const CardSelect = () => {
         </Grid>
       ) : currentStage === "event" ? (
         <Grid>
-          <Grid.Col span={4} offset={4}>
+          <Grid.Col span={{ base: 12, sm: 4 }} offset={{ base: 0, sm: 4 }}>
             <UnstyledButton
               onClick={() => {
                 onCardSelect(cardsInHand[0]);
               }}
+              style={{ width: "100%" }}
             >
               <Card
                 title={cardsInHand[0].title}

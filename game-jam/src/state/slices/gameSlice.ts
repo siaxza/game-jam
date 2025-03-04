@@ -47,7 +47,11 @@ export const gameSlice = createSlice({
           break;
         case "cash":
         default:
-          state.cash += payload.effectValue;
+          if (payload.category === "payment") {
+            state.cash += state.salary;
+          } else {
+            state.cash += payload.effectValue;
+          }
           break;
       }
 

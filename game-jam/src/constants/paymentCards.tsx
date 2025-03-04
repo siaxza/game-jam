@@ -7,7 +7,7 @@ export const paymentCards: CardProps[] = [
     description: "You have been paid a handsome sum of money",
     icon: <IconCoinPound size={100} />,
     effect: "cash",
-    effectValue: 100,
+    effectValue: 0,
     category: "payment",
   },
 ];
