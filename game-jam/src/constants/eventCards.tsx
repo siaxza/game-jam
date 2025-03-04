@@ -47,7 +47,7 @@ export const eventCards: CardProps[] = [
     description: "You're now divorced, your pension has reduced",
     icon: <IconHeartBroken size={100} />,
     effect: "pension",
-    effectValue: 2,
+    effectValue: 0.5,
     category: "event"
   },
   {
