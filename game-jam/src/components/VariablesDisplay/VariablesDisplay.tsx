@@ -49,7 +49,7 @@ export const VariablesDisplay = () => {
       >
         <ValueDisplay
           text="Round"
-          value={`${gameState.round}/10`}
+          value={`${gameState.round}/5`}
           icon={<IconFlag size={50} />}
         />
       </motion.div>

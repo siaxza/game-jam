@@ -4,5 +4,5 @@ export const starterPensionPot: PensionPot = {
   currentValue: 1000,
   diff: 0,
   percentage: 7,
-  previousValue: 0,
+  previousValue: 1000,
 };

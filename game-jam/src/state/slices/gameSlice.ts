@@ -102,7 +102,7 @@ export const gameSlice = createSlice({
           state.currentStage = "event";
           break;
         case "choice":
-          if (state.round === 10) {
+          if (state.round === 5) {
             state.currentStage = "complete";
           } else {
             playSound(clockSfx);
