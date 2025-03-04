@@ -4,6 +4,10 @@ import { CurrentStage } from "../../types/CurrentStage";
 import { PensionPot } from "../../types/PensionPot";
 import { starterPensionPot } from "../../constants/starterPensionPot";
 import { pensionPotCalculator } from "../../components/PensionPot/Calculator";
+import baDingSfx from '../../baDing.mp3';
+import yaySfx from '../../bubble.mp3';
+import pensionSfx from '../../vault.mp3';
+import clockSfx from '../../clock.mp3';
 
 export interface GameState {
   currentStage: CurrentStage;
@@ -23,12 +27,29 @@ const initialState: GameState = {
   salary: 500,
 };
 
+
+function playSound (sound: string | undefined) {
+  const audio = new Audio(sound)
+  audio.preservesPitch = false;
+  audio.playbackRate = Math.random() * (1.5 - 1 + 0.1) + 1;
+  audio.play()
+}
+
+function playLowSound (sound: string | undefined) {
+  const audio = new Audio(sound)
+  audio.preservesPitch = false;
+  audio.playbackRate = Math.random() * (0.9 - 0.7 + 0.1) + 0.7;
+  audio.play()
+}
+
+
 export const gameSlice = createSlice({
   name: "game",
   initialState,
   reducers: {
     applyEffect: (state, { payload }: PayloadAction<CardProps>) => {
       if (payload.cost) {
+        playLowSound(baDingSfx)
         state.cash -= payload.cost;
       }
 
@@ -39,11 +60,13 @@ export const gameSlice = createSlice({
           } else if (state.happiness + payload.effectValue < 0) {
             state.happiness = 0;
           } else {
-            state.happiness += payload.effectValue;
+            playSound(yaySfx)
+          state.happiness += payload.effectValue;
           }
 
           break;
         case "pension":
+          playSound(pensionSfx)
           state.pension = pensionPotCalculator(
             state.pension,
             payload.effectValue,
@@ -58,10 +81,12 @@ export const gameSlice = createSlice({
           );
           break;
         case "salary":
+          playSound(baDingSfx)
           state.salary += payload.effectValue;
           break;
         case "cash":
         default:
+          playSound(baDingSfx)
           if (payload.category === "payment") {
             state.cash += state.salary;
           } else {
@@ -78,6 +103,7 @@ export const gameSlice = createSlice({
           if (state.round === 10) {
             state.currentStage = "complete";
           } else {
+            playSound(clockSfx);
             state.round += 1;
             state.currentStage = "payment";
             state.pension = pensionPotCalculator(state.pension, 0, "calculate");

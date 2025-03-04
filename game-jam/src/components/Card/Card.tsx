@@ -3,6 +3,7 @@ import { CardProps } from "../../types/CardProps";
 import { Group, Paper, Pill, Text, useMantineTheme } from "@mantine/core";
 import { IconCircleArrowUp } from "@tabler/icons-react";
 import { EffectDisplay } from "../EffectDisplay/EffectDisplay";
+import { motion } from "motion/react";
 import { useAppSelector } from "../../state/hooks";
 
 export const Card = ({
@@ -18,7 +19,15 @@ export const Card = ({
   const salary = useAppSelector((state) => state.game.salary);
 
   return (
-    <Paper withBorder radius="md" className={classes.cardContainer}>
+    <motion.div style={{height: "100%" }} initial={{ y: 150 }}  animate={{ y: 0 }} 
+    transition={{ 
+      type: "spring", 
+      delay: 0.2 * Math.random(), 
+      stiffness: 300,           // Controls the spring stiffness
+      damping: 30,              // Controls the smoothness of the transition
+      restDelta: 0.001, 
+      velocity: 2 }} >
+    <Paper withBorder radius="md" className={classes.cardContainer} style={{height: "100%" }}>
       <div>
         <Group justify="end">
           <EffectDisplay effect={effect} effectValue={effectValue} />
@@ -45,5 +54,6 @@ export const Card = ({
         </Text>
       </div>
     </Paper>
+    </motion.div>
   );
 };
