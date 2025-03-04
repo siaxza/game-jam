@@ -48,7 +48,7 @@
 }
 
 .footerCategory {
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 .cardContainerShine {
