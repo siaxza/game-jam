@@ -16,6 +16,7 @@ export interface GameState {
   cash: number;
   round: number;
   salary: number;
+  wonLotto?: boolean
 }
 
 const initialState: GameState = {
@@ -108,6 +109,9 @@ export const gameSlice = createSlice({
             playSound(clockSfx);
             state.round += 1;
             state.currentStage = "payment";
+            if (Math.random() < 1 / 1000) {
+              state.wonLotto = true;
+            }
             state.pension = pensionPotCalculator(state.pension, 0, "calculate");
             if (payload.effect !== "happiness") {
               state.happiness -= 20;
