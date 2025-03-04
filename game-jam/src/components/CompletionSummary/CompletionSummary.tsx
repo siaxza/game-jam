@@ -1,6 +1,5 @@
-import { Button, SimpleGrid, Stack, Text } from "@mantine/core";
-import { IconMoodHappy, IconRefresh, IconUmbrella } from "@tabler/icons-react";
-import { SummaryCard } from "../SummaryCard/SummaryCard";
+import { Button, SimpleGrid, Stack } from "@mantine/core";
+import { IconRefresh } from "@tabler/icons-react";
 import { useAppDispatch } from "../../state/hooks";
 import { resetGame } from "../../state/slices/gameSlice";
 import { resetDeck } from "../../state/slices/deckSlice";
