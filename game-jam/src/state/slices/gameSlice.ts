@@ -3,7 +3,7 @@ import { CardProps } from "../../types/CardProps";
 import { CurrentStage } from "../../types/CurrentStage";
 import { PensionPot } from "../../types/PensionPot";
 import { starterPensionPot } from "../../constants/starterPensionPot";
-import { PensionPotCalculator } from "../../components/PensionPot/Calculator";
+import { pensionPotCalculator } from "../../components/PensionPot/Calculator";
 
 export interface GameState {
   currentStage: CurrentStage;
@@ -37,9 +37,17 @@ export const gameSlice = createSlice({
           state.happiness += payload.effectValue;
           break;
         case "pension":
-          state.pension = PensionPotCalculator(
+          state.pension = pensionPotCalculator(
             state.pension,
-            payload.effectValue
+            payload.effectValue,
+            payload.effect
+          );
+          break;
+          case "pension-rate":
+          state.pension = pensionPotCalculator(
+            state.pension,
+            payload.effectValue,
+            payload.effect
           );
           break;
         case "salary":
@@ -65,6 +73,7 @@ export const gameSlice = createSlice({
           } else {
             state.round += 1;
             state.currentStage = "payment";
+            state.pension = pensionPotCalculator(state.pension, 0, "calculate");
           }
           break;
         case "payment":

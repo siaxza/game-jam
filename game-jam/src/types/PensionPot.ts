@@ -1,4 +1,6 @@
 export type PensionPot = {
-  value: number;
+  currentValue: number;
+  previousValue: number;
   diff: number;
+  percentage: number;
 };

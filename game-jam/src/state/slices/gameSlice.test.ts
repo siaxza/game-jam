@@ -89,7 +89,7 @@ describe("applyEffect reducer", () => {
 
     const newState = reducer(initialState, applyEffect(payload));
 
-    expect(newState.pension.value).toBe(250); // 200 + 50 = 250
+    expect(newState.pension.currentValue).toBe(250); // 200 + 50 = 250
   });
 
   // Test for pension effect (negative value)
@@ -102,7 +102,7 @@ describe("applyEffect reducer", () => {
 
     const newState = reducer(initialState, applyEffect(payload));
 
-    expect(newState.pension.value).toBe(150); // 200 - 50 = 150
+    expect(newState.pension.currentValue).toBe(150); // 200 - 50 = 150
   });
 
   // Test for cash effect (positive value)
