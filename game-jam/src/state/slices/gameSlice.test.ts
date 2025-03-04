@@ -9,7 +9,7 @@ describe("applyEffect reducer", () => {
     initialState = {
       cash: 100,
       happiness: 50,
-      pension: { value: 200, diff: 0 },
+      pension: { currentValue: 200, diff: 0 },
       salary: 1000,
       currentStage: "starter",
       round: 1,

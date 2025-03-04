@@ -23,11 +23,13 @@ export const pensionPotCalculator = (pensionPot: PensionPot, value: number, effe
       // This will only work if you can select a pension value once per round
       const potValue = pensionPot.currentValue * (1 + pensionPot.percentage / 100);
 
+      const calculatedDiff = Number(
+        (((potValue - pensionPot.previousValue) / pensionPot.previousValue) * 100).toFixed(2)
+      );
+
       return {
-        currentValue: potValue.toFixed(2),
-        diff: Number(
-          (((potValue - pensionPot.currentValue) / pensionPot.previousValue) * 100).toFixed(2)
-        ),
+        currentValue: Number(potValue.toFixed(2)),
+        diff: calculatedDiff,
         percentage: pensionPot.percentage,
         previousValue: pensionPot.currentValue,
       };
