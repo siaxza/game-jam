@@ -15,7 +15,7 @@ export interface GameState {
 }
 
 const initialState: GameState = {
-  currentStage: "complete",
+  currentStage: "starter",
   happiness: 50,
   pension: starterPensionPot,
   cash: 500,
@@ -34,14 +34,7 @@ export const gameSlice = createSlice({
 
       switch (payload.effect) {
         case "happiness":
-          if (state.happiness + payload.effectValue > 100) {
-            state.happiness = 100;
-          } else if (state.happiness + payload.effectValue < 0) {
-            state.happiness = 0;
-          } else {
-            state.happiness += payload.effectValue;
-          }
-
+          state.happiness += payload.effectValue;
           break;
         case "pension":
           state.pension = PensionPotCalculator(
@@ -83,12 +76,9 @@ export const gameSlice = createSlice({
           break;
       }
     },
-    resetGame: () => {
-      return initialState;
-    },
   },
 });
 
-export const { applyEffect, resetGame } = gameSlice.actions;
+export const { applyEffect } = gameSlice.actions;
 
 export default gameSlice.reducer;
