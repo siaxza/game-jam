@@ -3,18 +3,18 @@ import {
   IconArrowUpRight,
   IconUmbrella,
 } from "@tabler/icons-react";
-import { Flex, Text, ThemeIcon } from "@mantine/core";
+import { Flex, Text, ThemeIcon, Tooltip } from "@mantine/core";
 import type { PensionPot } from "../../types/PensionPot";
 import { ValueDisplay } from "../ValueDisplay/ValueDisplay";
 
 export function PensionPot({ potData }: { potData: PensionPot }) {
   const DiffIcon = potData.diff > 0 ? IconArrowUpRight : IconArrowDownRight;
-  const startingPoint = potData.diff != 0 && potData.value != 0;
+  const startingPoint = potData.diff != 0 && potData.currentValue != 0;
 
   return (
     <ValueDisplay
       text="Pension"
-      value={`£${potData.value}`}
+      value={`£${potData.currentValue}`}
       icon={<IconUmbrella size={50} stroke={1.5} />}
     >
       {startingPoint && (

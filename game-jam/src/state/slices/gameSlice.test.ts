@@ -55,6 +55,30 @@ describe("applyEffect reducer", () => {
     expect(newState.happiness).toBe(40); // 50 - 10 = 40
   });
 
+  it("happiness should not go above 100", () => {
+    const payload: any = {
+      cost: 0,
+      effect: "happiness",
+      effectValue: 51,
+    };
+
+    const newState = reducer(initialState, applyEffect(payload));
+
+    expect(newState.happiness).toBe(100); // 50 + 10 = 60
+  });
+
+  it("happiness should not go bellow 0", () => {
+    const payload: any = {
+      cost: 0,
+      effect: "happiness",
+      effectValue: -51,
+    };
+
+    const newState = reducer(initialState, applyEffect(payload));
+
+    expect(newState.happiness).toBe(0); // 50 + 10 = 60
+  });
+
   // Test for pension effect (positive value)
   it("should add pension value if effect is pension and value is positive", () => {
     const payload: any = {
@@ -65,7 +89,7 @@ describe("applyEffect reducer", () => {
 
     const newState = reducer(initialState, applyEffect(payload));
 
-    expect(newState.pension.value).toBe(250); // 200 + 50 = 250
+    expect(newState.pension.currentValue).toBe(250); // 200 + 50 = 250
   });
 
   // Test for pension effect (negative value)
@@ -78,7 +102,7 @@ describe("applyEffect reducer", () => {
 
     const newState = reducer(initialState, applyEffect(payload));
 
-    expect(newState.pension.value).toBe(150); // 200 - 50 = 150
+    expect(newState.pension.currentValue).toBe(150); // 200 - 50 = 150
   });
 
   // Test for cash effect (positive value)

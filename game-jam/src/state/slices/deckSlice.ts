@@ -5,21 +5,17 @@ import { choiceCards } from "../../constants/choiceCards";
 import { eventCards } from "../../constants/eventCards";
 import { CurrentStage } from "../../types/CurrentStage";
 import { paymentCards } from "../../constants/paymentCards";
-import { PensionPot } from "../../types/PensionPot";
-import { starterPensionPot } from "../../constants/starterPensionPot";
 
 export interface DeckState {
   choiceCardDeck: CardProps[];
   eventCardDeck: CardProps[];
   cardsInHand: CardProps[];
-  pensionPot: PensionPot;
 }
 
 const initialState: DeckState = {
   choiceCardDeck: choiceCards,
   eventCardDeck: eventCards,
   cardsInHand: starterCards,
-  pensionPot : starterPensionPot
 };
 
 export const deckSlice = createSlice({
@@ -54,9 +50,12 @@ export const deckSlice = createSlice({
         state.cardsInHand = [drawnCard];
       }
     },
+    resetDeck: () => {
+      return initialState;
+    },
   },
 });
 
-export const { drawNextCards } = deckSlice.actions;
+export const { drawNextCards, resetDeck } = deckSlice.actions;
 
 export default deckSlice.reducer;

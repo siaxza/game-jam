@@ -3,7 +3,7 @@ import { CardProps } from "../../types/CardProps";
 import { CurrentStage } from "../../types/CurrentStage";
 import { PensionPot } from "../../types/PensionPot";
 import { starterPensionPot } from "../../constants/starterPensionPot";
-import { PensionPotCalculator } from "../../components/PensionPot/Calculator";
+import { pensionPotCalculator } from "../../components/PensionPot/Calculator";
 
 export interface GameState {
   currentStage: CurrentStage;
@@ -34,12 +34,27 @@ export const gameSlice = createSlice({
 
       switch (payload.effect) {
         case "happiness":
-          state.happiness += payload.effectValue;
+          if (state.happiness + payload.effectValue > 100) {
+            state.happiness = 100;
+          } else if (state.happiness + payload.effectValue < 0) {
+            state.happiness = 0;
+          } else {
+            state.happiness += payload.effectValue;
+          }
+
           break;
         case "pension":
-          state.pension = PensionPotCalculator(
+          state.pension = pensionPotCalculator(
             state.pension,
-            payload.effectValue
+            payload.effectValue,
+            payload.effect
+          );
+          break;
+          case "pension-rate":
+          state.pension = pensionPotCalculator(
+            state.pension,
+            payload.effectValue,
+            payload.effect
           );
           break;
         case "salary":
@@ -65,6 +80,7 @@ export const gameSlice = createSlice({
           } else {
             state.round += 1;
             state.currentStage = "payment";
+            state.pension = pensionPotCalculator(state.pension, 0, "calculate");
           }
           break;
         case "payment":
@@ -80,9 +96,12 @@ export const gameSlice = createSlice({
         state.currentStage = "lose";
       }
     },
+    resetGame: () => {
+      return initialState;
+    },
   },
 });
 
-export const { applyEffect } = gameSlice.actions;
+export const { applyEffect, resetGame } = gameSlice.actions;
 
 export default gameSlice.reducer;

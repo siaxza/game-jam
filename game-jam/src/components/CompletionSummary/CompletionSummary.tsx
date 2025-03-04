@@ -1,24 +1,28 @@
-import { SimpleGrid, Stack, Text } from "@mantine/core";
-import { IconMoodHappy, IconUmbrella } from "@tabler/icons-react";
-import { SummaryCard } from "../SummaryCard/SummaryCard";
+import { Button, SimpleGrid, Stack } from "@mantine/core";
+import { IconRefresh } from "@tabler/icons-react";
+import { useAppDispatch } from "../../state/hooks";
+import { resetGame } from "../../state/slices/gameSlice";
+import { resetDeck } from "../../state/slices/deckSlice";
+import { PensionSummaryCard } from "../PensionSummaryCard/PensionSummaryCard";
+import { HappinessnSummaryCard } from "../HappinessSummaryCard/HappinessSummaryCard";
 
 export const CompletionSummary = () => {
+  const dispatch = useAppDispatch();
+
+  const onRestartClick = () => {
+    dispatch(resetDeck());
+    dispatch(resetGame());
+  };
+
   return (
-    <SimpleGrid cols={{ md: 2, sm: 1 }}>
-      <SummaryCard
-        icon={<IconUmbrella size={32} stroke={1.5} />}
-        summaryType="Pension"
-        rating={80}
-      >
-        <Text mt="md">blablabla text about pension rating</Text>
-      </SummaryCard>
-      <SummaryCard
-        icon={<IconMoodHappy size={32} stroke={1.5} />}
-        summaryType="Happiness"
-        rating={50}
-      >
-        <Text mt="md">blablabla text about happiness rating</Text>
-      </SummaryCard>
-    </SimpleGrid>
+    <Stack>
+      <SimpleGrid cols={{ md: 2, sm: 1 }}>
+        <PensionSummaryCard rating={80} />
+        <HappinessnSummaryCard rating={50} />
+      </SimpleGrid>
+      <Button size="lg" rightSection={<IconRefresh />} onClick={onRestartClick}>
+        Restart game
+      </Button>
+    </Stack>
   );
 };
