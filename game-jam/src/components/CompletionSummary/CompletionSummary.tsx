@@ -20,7 +20,12 @@ export const CompletionSummary = () => {
         <PensionSummaryCard rating={80} />
         <HappinessnSummaryCard rating={50} />
       </SimpleGrid>
-      <Button size="lg" rightSection={<IconRefresh />} onClick={onRestartClick}>
+      <Button
+        size="lg"
+        rightSection={<IconRefresh />}
+        onClick={onRestartClick}
+        color="yellow"
+      >
         Restart game
       </Button>
     </Stack>

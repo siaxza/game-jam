@@ -95,7 +95,7 @@ export const gameSlice = createSlice({
           break;
       }
 
-      if(state.cash <0 || state.happiness<25){
+      if (state.cash < 0 || state.happiness < 25) {
         state.currentStage = "lose";
       }
     },
