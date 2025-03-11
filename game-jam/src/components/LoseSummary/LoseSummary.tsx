@@ -8,7 +8,6 @@ import { IconRefresh } from "@tabler/icons-react";
 
 export const LoseSummary = () => {
   const dispatch = useAppDispatch();
-  const happiness = useAppSelector((state) => state.game.happiness);
   const cash = useAppSelector((state) => state.game.cash);
   const onRestartClick = () => {
     dispatch(resetDeck());

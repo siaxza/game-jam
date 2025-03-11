@@ -6,7 +6,6 @@ import {
 import { Flex, Text, ThemeIcon } from "@mantine/core";
 import type { PensionPot } from "../../types/PensionPot";
 import { ValueDisplay } from "../ValueDisplay/ValueDisplay";
-import { motion } from 'motion/react';
 
 export function PensionPot({ potData }: { potData: PensionPot }) {
   const DiffIcon = potData.diff > 0 ? IconArrowUpRight : IconArrowDownRight;

@@ -2,7 +2,6 @@ import {
   Badge,
   Paper,
   RingProgress,
-  Text,
   ThemeIcon,
   Center,
   Title,
@@ -11,7 +10,6 @@ import {
   IconPentagonNumber1,
   IconPentagonNumber2,
   IconPentagonNumber3,
-  IconUmbrella,
 } from "@tabler/icons-react";
 import classes from "./SummaryCard.module.css";
 
@@ -36,7 +34,11 @@ export const SummaryLoseCard = ({
       ? IconPentagonNumber2
       : IconPentagonNumber3;
   const badgeText =
-    rating >= 80 ? "Comfortable" : rating >= 60 ? "Moderate" : "You lost, try again please!";
+    rating >= 80
+      ? "Comfortable"
+      : rating >= 60
+      ? "Moderate"
+      : "You lost, try again please!";
 
   return (
     <Paper radius="md" withBorder className={classes.card} mt={20}>

@@ -2,7 +2,6 @@ import {
   Badge,
   Paper,
   RingProgress,
-  Text,
   ThemeIcon,
   Center,
   Title,
@@ -11,7 +10,6 @@ import {
   IconPentagonNumber1,
   IconPentagonNumber2,
   IconPentagonNumber3,
-  IconUmbrella,
 } from "@tabler/icons-react";
 import classes from "./SummaryCard.module.css";
 

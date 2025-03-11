@@ -29,7 +29,11 @@ export const CardSelect = () => {
           <Grid.Col span={{ base: 12, sm: 4 }} offset={{ base: 0, sm: 4 }}>
             <motion.div
               exit={{ opacity: 0 }}
-              whileTap={{ scale: 1.1, rotate: 4, ease: [0, 0.71, 0.2, 1.01] }}
+              whileTap={{
+                scale: 1.1,
+                rotate: 4,
+                // ease: [0, 0.71, 0.2, 1.01]
+              }}
             >
               <UnstyledButton
                 onClick={() => {
@@ -54,7 +58,11 @@ export const CardSelect = () => {
         <Grid>
           <Grid.Col span={{ base: 12, sm: 4 }} offset={{ base: 0, sm: 4 }}>
             <motion.div
-              whileTap={{ scale: 1.1, rotate: 5, ease: [0, 0.71, 0.2, 1.01] }}
+              whileTap={{
+                scale: 1.1,
+                rotate: 5,
+                // ease: [0, 0.71, 0.2, 1.01]
+              }}
             >
               <UnstyledButton
                 onClick={() => {
@@ -80,7 +88,11 @@ export const CardSelect = () => {
         <SimpleGrid cols={{ base: 1, sm: 3 }} style={{ alignItems: "stretch" }}>
           {cardsInHand.map((card) => (
             <motion.div
-              whileTap={{ scale: 1.1, rotate: 4, ease: [0, 0.71, 0.2, 1.01] }}
+              whileTap={{
+                scale: 1.1,
+                rotate: 4,
+                // , ease: [0, 0.71, 0.2, 1.01]
+              }}
             >
               <UnstyledButton
                 key={card.title}
